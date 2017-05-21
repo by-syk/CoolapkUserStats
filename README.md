@@ -20,17 +20,21 @@
 
 如何获取每个用户的数据呢？有两个方案：
 1. 解析酷安用户网页
-  `http://coolapk.com/u/{uid}/album`
+
+  `http://coolapk.com/u/{uid}`
+
+  为了节省流量，有一个更佳的选择：`http://coolapk.com/u/{uid}/album`
 
   ![HTML](art/coolapk_463675_web_html.png)
 
 2. 调用酷安APP的API
+
   `https://api.coolapk.com/v6/user/profile?uid={uid}`
 
   ![API](art/coolapk_463675_app_api.png)
 
 比较：
-|  | 方案一 | 方案二 |
+| . | 方案一 | 方案二 |
 | :---- | :---- | :---- |
 | 速度 | 快 | 慢 |
 | 信息量 | 少 | 多 |
