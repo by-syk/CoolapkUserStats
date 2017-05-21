@@ -96,7 +96,7 @@ def run(id_list, token):
                 'X-Sdk-Int': '25',
                 'X-Sdk-Locale': 'en-US',
                 'X-App-Id': 'coolmarket',
-                'X-App-Token': token,
+                'X-App-Token': token,  # 有效期为5min
                 'X-App-Version': '6.10.6',
                 'X-App-Code': '1608291',
             }
@@ -113,7 +113,7 @@ def run(id_list, token):
         jo = json.loads(data)
         if 'data' not in jo:
             if 'status' in jo:
-                if jo['status'] == 1004:  # Token 过期
+                if jo['status'] == 1004:  # token 过期
                     print(jo)
                     break
                 elif jo['status'] == -10001:  # 无权访问，如 10001 admin
