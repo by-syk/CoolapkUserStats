@@ -251,6 +251,8 @@ LIMIT 100;
 |  99 | [@zjszjs](http://www.coolapk.com/u/499404)          |   648 |    23 | 1130 | 2311 |    0 |
 | 100 | [@wszxf](http://www.coolapk.com/u/504087)           |   647 |   168 | 1290 |  558 |  147 |
 
+速查：[https://coolapkuserstats.by-syk.com](https://coolapkuserstats.by-syk.com)
+
 > 如何在数据库中查询指定用户的评分情况？
 > ```
 > SELECT
