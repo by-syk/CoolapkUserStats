@@ -110,10 +110,12 @@ python3 coolapk_user_stats_via_htm.py 30000 10000
 
 ### 结果
 
+> 以下统计基于 `2017-05-19` - `2017-05-21` 时间段采集的数据
+
 ##### 用户数
 
 ```
-SELECT COUNT(*) FROM user WHERE fan = 0 AND feed = 0 AND app = 0 AND find = 0;
+SELECT COUNT(*) FROM user;
 ```
 
 注册用户数：**925534**
@@ -249,8 +251,6 @@ LIMIT 100;
 |  98 | [@Kiriya](http://www.coolapk.com/u/271927)          |   653 |   160 | 1306 |  631 |   15 |
 |  99 | [@zjszjs](http://www.coolapk.com/u/499404)          |   648 |    23 | 1130 | 2311 |    0 |
 | 100 | [@wszxf](http://www.coolapk.com/u/504087)           |   647 |   168 | 1290 |  558 |  147 |
-
-> 基于 `2017-05-19` - `2017-05-21` 时间段采集的数据
 
 
 ### License
