@@ -110,15 +110,29 @@ python3 coolapk_user_stats_via_htm.py 30000 10000
 
 ### 结果
 
-计算用户评分：
+##### 用户数
+
+```
+SELECT COUNT(*) FROM user WHERE fan = 0 AND feed = 0 AND app = 0 AND find = 0;
+```
+
+注册用户数：**925534**
+
+```
+SELECT COUNT(*) FROM user WHERE fan = 0 AND feed = 0 AND app = 0 AND find = 0;
+```
+
+沉睡用户数：**381889** / **41%**
+
+##### 评分排名TOP100
+
+设定评分计算规则：
 
 |  | 粉丝数 | 动态数 | 关注APP数 | 发现APP数 |
 | :---- | :----: | :----: | :----: | :----: |
 | 权值 | 0.50 | 0.40 | 0.08 | 0.02 |
 
 > 各项权值仅为我个人设定，因此以下数据仅供参考。
-
-执行SQL语句：
 
 ```
 SELECT
@@ -132,8 +146,6 @@ ORDER BY
     score DESC
 LIMIT 100;
 ```
-
-评分排名TOP100：
 
 | # | 酷友 | 评分 | 粉丝数 | 动态数 | 关注APP数 | 发现APP数 |
 | ----: | :---- |  :---- | :---- | :---- | :---- | :---- |
