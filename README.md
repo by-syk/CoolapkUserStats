@@ -109,7 +109,7 @@ python3 coolapk_user_stats_via_htm.py 30000 10000
 
 ### 结果
 
-> 以下统计基于 `2017-05-19` - `2017-05-22` 时间段采集的数据
+> 以下统计基于 `2017-05-19` - `2017-05-23` 时间段采集的数据
 
 ##### 用户数
 
@@ -117,13 +117,13 @@ python3 coolapk_user_stats_via_htm.py 30000 10000
 SELECT COUNT(*) FROM user;
 ```
 
-注册用户数：`929322` **93万**
+注册用户数：`953945` **95万**
 
 ```
 SELECT COUNT(*) FROM user WHERE fan = 0 AND feed = 0 AND app = 0 AND find = 0;
 ```
 
-沉睡用户数：`384345` **38万，占比41%**
+沉睡用户数：`397371` **40万，占比42%**
 
 ##### 评分排名TOP100
 
@@ -227,29 +227,31 @@ LIMIT 100;
 |  75 | [@iVanilla](http://www.coolapk.com/u/651701)        |   756 |   529 | 1227 |   11 |    6 |
 |  76 | [@zfj012](http://www.coolapk.com/u/455740)          |   753 |  1188 |  200 |  996 |    2 |
 |  77 | [@少侠就是我啊](http://www.coolapk.com/u/427824)    |   751 |   102 | 1610 |  700 |   18 |
-|  78 | [@我是笑话](http://www.coolapk.com/u/485637)        |   745 |   200 | 1573 |  193 |   49 |
-|  79 | [@Android_L_User](http://www.coolapk.com/u/524069)  |   739 |  1236 |  303 |    2 |    8 |
-|  80 | [@郁闷人](http://www.coolapk.com/u/456215)          |   731 |   378 | 1344 |   61 |   10 |
-|  81 | [@UBIKS](http://www.coolapk.com/u/375211)           |   723 |   897 |  665 |   96 |   83 |
-|  82 | [@苏阿墨](http://www.coolapk.com/u/396702)          |   718 |    23 |  140 | 8134 |    0 |
-|  83 | [@安卓大帝](http://www.coolapk.com/u/275421)        |   717 |   574 | 1075 |    0 |   10 |
-|  84 | [@mooooo](http://www.coolapk.com/u/430832)          |   712 |   111 | 1631 |   43 |   56 |
-|  85 | [@xyphillipyx](http://www.coolapk.com/u/24080)      |   698 |  1220 |  216 |   15 |   24 |
-|  86 | [@yuki918](http://www.coolapk.com/u/114699)         |   689 |  1172 |  258 |    0 |    3 |
-|  87 | [@n5202853](http://www.coolapk.com/u/511550)        |   682 |  1305 |    5 |  346 |    9 |
-|  88 | [@丿魸](http://www.coolapk.com/u/297328)            |   680 |   101 | 1489 |  409 |   81 |
-|  89 | [@chendeshen](http://www.coolapk.com/u/306952)      |   677 |    18 |   86 | 7924 |    4 |
-|  90 | [@lqmouse](http://www.coolapk.com/u/195461)         |   674 |     6 |  221 | 7292 |    0 |
-|  91 | [@Misaka9903](http://www.coolapk.com/u/433159)      |   664 |  1163 |  167 |  195 |    6 |
-|  92 | [@七曜之律](http://www.coolapk.com/u/435498)        |   663 |   327 | 1138 |  528 |  128 |
-|  93 | [@酷宇小编](http://www.coolapk.com/u/245902)        |   662 |    33 | 1581 |  167 |    1 |
-|  94 | [@gujiangjiang](http://www.coolapk.com/u/151454)    |   659 |    39 | 1596 |   19 |   24 |
-|  95 | [@fairyex](http://www.coolapk.com/u/466253)         |   658 |  1250 |   82 |    2 |    2 |
-|  96 | [@Resume](http://www.coolapk.com/u/568993)          |   654 |   941 |  456 |    3 |   56 |
-|  97 | [@蓝莓味绿茶](http://www.coolapk.com/u/238725)      |   653 |   966 |  422 |   25 |    9 |
-|  98 | [@Kiriya](http://www.coolapk.com/u/271927)          |   653 |   160 | 1306 |  631 |   15 |
-|  99 | [@zjszjs](http://www.coolapk.com/u/499404)          |   648 |    23 | 1130 | 2311 |    0 |
-| 100 | [@wszxf](http://www.coolapk.com/u/504087)           |   647 |   168 | 1290 |  558 |  147 |
+|  78 | [@一纸希壁纸控](http://www.coolapk.com/u/732998)    |   750 |   642 | 1069 |   20 |    2 |
+|  79 | [@我是笑话](http://www.coolapk.com/u/485637)        |   745 |   200 | 1573 |  193 |   49 |
+|  80 | [@Android_L_User](http://www.coolapk.com/u/524069)  |   739 |  1236 |  303 |    2 |    8 |
+|  81 | [@郁闷人](http://www.coolapk.com/u/456215)          |   731 |   378 | 1344 |   61 |   10 |
+|  82 | [@UBIKS](http://www.coolapk.com/u/375211)           |   723 |   897 |  665 |   96 |   83 |
+|  83 | [@苏阿墨](http://www.coolapk.com/u/396702)          |   718 |    23 |  140 | 8134 |    0 |
+|  84 | [@安卓大帝](http://www.coolapk.com/u/275421)        |   717 |   574 | 1075 |    0 |   10 |
+|  85 | [@mooooo](http://www.coolapk.com/u/430832)          |   712 |   111 | 1631 |   43 |   56 |
+|  86 | [@xyphillipyx](http://www.coolapk.com/u/24080)      |   698 |  1220 |  216 |   15 |   24 |
+|  87 | [@yuki918](http://www.coolapk.com/u/114699)         |   689 |  1172 |  258 |    0 |    3 |
+|  88 | [@n5202853](http://www.coolapk.com/u/511550)        |   682 |  1305 |    5 |  346 |    9 |
+|  89 | [@丿魸](http://www.coolapk.com/u/297328)            |   680 |   101 | 1489 |  409 |   81 |
+|  90 | [@chendeshen](http://www.coolapk.com/u/306952)      |   677 |    18 |   86 | 7924 |    4 |
+|  91 | [@lqmouse](http://www.coolapk.com/u/195461)         |   674 |     6 |  221 | 7292 |    0 |
+|  92 | [@Misaka9903](http://www.coolapk.com/u/433159)      |   664 |  1163 |  167 |  195 |    6 |
+|  93 | [@七曜之律](http://www.coolapk.com/u/435498)        |   663 |   327 | 1138 |  528 |  128 |
+|  94 | [@酷宇小编](http://www.coolapk.com/u/245902)        |   662 |    33 | 1581 |  167 |    1 |
+|  95 | [@gujiangjiang](http://www.coolapk.com/u/151454)    |   659 |    39 | 1596 |   19 |   24 |
+|  96 | [@fairyex](http://www.coolapk.com/u/466253)         |   658 |  1250 |   82 |    2 |    2 |
+|  97 | [@Resume](http://www.coolapk.com/u/568993)          |   654 |   941 |  456 |    3 |   56 |
+|  98 | [@蓝莓味绿茶](http://www.coolapk.com/u/238725)      |   653 |   966 |  422 |   25 |    9 |
+|  99 | [@Kiriya](http://www.coolapk.com/u/271927)          |   653 |   160 | 1306 |  631 |   15 |
+| 100 | [@zjszjs](http://www.coolapk.com/u/499404)          |   648 |    23 | 1130 | 2311 |    0 |
+
+*我是第36位，哈哈。*
 
 > 如何在数据库中查询指定用户的评分情况？
 > ```
