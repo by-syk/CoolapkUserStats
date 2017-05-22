@@ -65,6 +65,7 @@ def run(id_list):
             continue
         except request.HTTPError as e:
             if e.code == 400:
+                print_status(time_start, i + 1, len(id_list), '')
                 continue
             else:
                 # print(e.reason)
@@ -94,23 +95,27 @@ def run(id_list):
 
         # session.add(user)
         session.merge(user)
-        if i % 100 == 0:
+        if i % 100 == 99:
             session.commit()
 
         ok_num += 1
-        if i % 100 == 99 or i == len(id_list) - 1:
-            print('%.0fs\t%d/%d:\t%d - @%s'
-                  % (time.time() - time_start, i + 1, len(id_list), user_id, user.name))
-        else:
-            sys.stdout.writelines('%.0fs\t%d/%d:\t%d - @%s                \r'
-                                  % (time.time() - time_start, i + 1, len(id_list), user_id, user.name))
-            # sys.stdout.flush()
+        print_status(time_start, i + 1, len(id_list), '%d - @%s' % (user_id, user.name))
 
     session.commit()
     session.close()
 
     print('All done! %.0fs %d/%d %.0fkb'
           % (time.time() - time_start, ok_num, len(id_list), page_size / 1024))
+
+
+def print_status(time_start, progress, total, content):
+    if progress % 100 == 0 or progress == max:
+        print('%.0fs\t%d/%d:\t%s'
+              % (time.time() - time_start, progress, total, content))
+    else:
+        sys.stdout.writelines('%.0fs\t%d/%d:\t%s                \r'
+                              % (time.time() - time_start, progress, total, content))
+        # sys.stdout.flush()
 
 
 if __name__ == '__main__':

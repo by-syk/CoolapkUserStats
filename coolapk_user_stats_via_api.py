@@ -33,7 +33,7 @@ class User2(base):
     #     app_follow INT DEFAULT 0,
     #     app_rating INT DEFAULT 0,
     #     app_find INT DEFAULT 0,
-    #     album_num INT DEFAULT 0,
+    #     album INT DEFAULT 0,
     #     flag_black TINYINT(1) DEFAULT 0,
     #     flag_ignore TINYINT(1) DEFAULT 0,
     #     flag_limit TINYINT(1) DEFAULT 0,
@@ -69,7 +69,7 @@ class User2(base):
     # 发现APP数
     app_find_num = sqlalchemy.Column('app_find', sqlalchemy.INT, default=0)
     # 应用集数
-    album_num = sqlalchemy.Column('album_num', sqlalchemy.INT, default=0)
+    album_num = sqlalchemy.Column('album', sqlalchemy.INT, default=0)
     # 黑名单标记
     flag_black = sqlalchemy.Column('flag_black', sqlalchemy.SMALLINT)
     # 全网屏蔽标记
@@ -77,7 +77,7 @@ class User2(base):
     # 禁言标记
     flag_limit = sqlalchemy.Column('flag_limit', sqlalchemy.SMALLINT)
     # 数据获取时间
-    # time = sqlalchemy.Column(sqlalchemy.TIMESTAMP)
+    # time = sqlalchemy.Column('time', sqlalchemy.TIMESTAMP)
 
 
 def run(id_list, token):
@@ -117,8 +117,10 @@ def run(id_list, token):
                     print(jo)
                     break
                 elif jo['status'] == -10001:  # 无权访问，如 10001 admin
+                    print_status(time_start, i + 1, len(id_list), '')
                     continue
                 elif jo['status'] == -1:  # 用户不存在
+                    print_status(time_start, i + 1, len(id_list), '')
                     continue
                 else:
                     print(jo)
@@ -149,23 +151,27 @@ def run(id_list, token):
 
         # session.add(user2)
         session.merge(user2)
-        if i % 100 == 0:
+        if i % 100 == 99:
             session.commit()
 
         ok_num += 1
-        if i % 100 == 99 or i == len(id_list) - 1:
-            print('%.0fs\t%d/%d:\t%d - @%s'
-                  % (time.time() - time_start, i + 1, len(id_list), user_id, user2.username))
-        else:
-            sys.stdout.writelines('%.0fs\t%d/%d:\t%d - @%s                \r'
-                                  % (time.time() - time_start, i + 1, len(id_list), user_id, user2.username))
-            # sys.stdout.flush()
+        print_status(time_start, i + 1, len(id_list), '%d - @%s' % (user_id, user2.username))
 
     session.commit()
     session.close()
 
     print('All done! %.0fs %d/%d %.0fkb'
           % (time.time() - time_start, ok_num, len(id_list), data_size / 1024))
+
+
+def print_status(time_start, progress, total, content):
+    if progress == 100 or progress == max:
+        print('%.0fs\t%d/%d:\t%s'
+              % (time.time() - time_start, progress, total, content))
+    else:
+        sys.stdout.writelines('%.0fs\t%d/%d:\t%s                \r'
+                              % (time.time() - time_start, progress, total, content))
+        # sys.stdout.flush()
 
 
 if __name__ == '__main__':
