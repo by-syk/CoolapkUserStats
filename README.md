@@ -251,6 +251,24 @@ LIMIT 100;
 |  99 | [@zjszjs](http://www.coolapk.com/u/499404)          |   648 |    23 | 1130 | 2311 |    0 |
 | 100 | [@wszxf](http://www.coolapk.com/u/504087)           |   647 |   168 | 1290 |  558 |  147 |
 
+> 如何在数据库中查询指定用户的评分情况？
+> ```
+> SELECT
+>     *
+> FROM
+>     (SELECT
+>         @rownum:=@rownum+1 AS '#',
+>	  id, name, fan, feed, app, find,
+>		  FLOOR(fan * 0.5 + feed * 0.4 + app * 0.08 + find * 0.02) AS 'score'
+>	  FROM
+>	      user, (SELECT @rownum:=0) temp
+>	  ORDER BY
+>		  score DESC
+>      ) stats
+>  WHERE
+>      name = 'xxx';
+> ```
+
 
 ### License
 
