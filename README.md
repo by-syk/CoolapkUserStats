@@ -270,8 +270,9 @@ LIMIT 100;
 >  WHERE
 >      name = 'xxx';
 > ```
-> 
-> 在线速查：[https://coolapkuserstats.by-syk.com](https://coolapkuserstats.by-syk.com)
+>
+> 在线速查（服务将于2017年06月关闭）：
+> [https://coolapkuserstats.by-syk.com](https://coolapkuserstats.by-syk.com)
 
 
 ### License
