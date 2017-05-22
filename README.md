@@ -148,7 +148,7 @@ ORDER BY
 LIMIT 100;
 ```
 
-| # | 酷友 | 评分 | 粉丝数 | 动态数 | 关注APP数 | 发现APP数 |
+| # | 酷友 | 得分 | 粉丝数 | 动态数 | 关注APP数 | 发现APP数 |
 | ----: | :---- |  :---- | :---- | :---- | :---- | :---- |
 |   1 | [@酷安小编](http://www.coolapk.com/u/12202)         |  8860 | 15374 | 2869 |  179 |  595 |
 |   2 | [@八百标兵](http://www.coolapk.com/u/408649)        |  7727 | 12784 | 3193 |  424 | 1205 |
@@ -262,6 +262,8 @@ LIMIT 100;
 >		  FLOOR(fan * 0.5 + feed * 0.4 + app * 0.08 + find * 0.02) AS 'score'
 >	  FROM
 >	      user, (SELECT @rownum:=0) temp
+>     WHERE
+>        fan > 0 OR feed > 0 OR app > 0 OR find > 0
 >	  ORDER BY
 >		  score DESC
 >      ) stats
