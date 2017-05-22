@@ -165,7 +165,7 @@ def run(id_list, token):
 
 
 def print_status(time_start, progress, total, content):
-    if progress == 100 or progress == max:
+    if progress % 100 == 0 or progress == max:
         print('%.0fs\t%d/%d:\t%s'
               % (time.time() - time_start, progress, total, content))
     else:
