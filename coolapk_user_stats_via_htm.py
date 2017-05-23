@@ -93,12 +93,13 @@ def run(id_list):
         if search:
             user.find = search.group(1)
 
+        ok_num += 1
+
         # session.add(user)
         session.merge(user)
-        if i % 100 == 99:
+        if ok_num % 100 == 99:
             session.commit()
 
-        ok_num += 1
         print_status(time_start, i + 1, len(id_list), '%d - @%s' % (user_id, user.name))
 
     session.commit()

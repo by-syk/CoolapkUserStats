@@ -149,12 +149,13 @@ def run(id_list, token):
         user2.flag_ignore = jo_data['isIgnoreList']
         user2.flag_limit = jo_data['isLimitList']
 
+        ok_num += 1
+
         # session.add(user2)
         session.merge(user2)
-        if i % 100 == 99:
+        if ok_num % 100 == 99:
             session.commit()
 
-        ok_num += 1
         print_status(time_start, i + 1, len(id_list), '%d - @%s' % (user_id, user2.username))
 
     session.commit()

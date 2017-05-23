@@ -117,13 +117,13 @@ python3 coolapk_user_stats_via_htm.py 30000 10000
 SELECT COUNT(*) FROM user;
 ```
 
-注册用户数：`953945` **95万**
+注册用户数：`965289` **97万**
 
 ```
 SELECT COUNT(*) FROM user WHERE fan = 0 AND feed = 0 AND app = 0 AND find = 0;
 ```
 
-沉睡用户数：`397371` **40万，占比42%**
+沉睡用户数：`403651` **40万，占比42%**
 
 ##### 评分排名TOP100
 
